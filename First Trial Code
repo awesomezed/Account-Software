@@ -1,0 +1,252 @@
+from tkinter import *
+from tkinter import ttk
+
+
+class Billing:
+    def __init__(self, root):
+
+        self.root = root
+        self.root.title("Customer Management System")
+        self.root.geometry("1280x640+0+0")
+
+        title = Label(self.root, text="VENICE", bd=10, relief=GROOVE, font=(
+            "times new roman", 40, "bold"), bg="brown3", fg="black")
+        title.pack(side=TOP, fill=X)
+
+        # =========MANAGE FRAME============
+        Manage_Frame = Frame(self.root, bd=4, relief=RIDGE, bg="light cyan")
+        Manage_Frame.place(x=10, y=100, width=800, height=635)
+        m_title = Label(Manage_Frame, text="Customer Information",bg="cyan", fg="black", font=("times new roman", 10, "bold"))
+        m_title.grid(row=0, columnspan=1, pady=10, sticky="W")
+
+        lbl_name = Label(Manage_Frame, text="নাম", fg="black",font=("Lohit Bengali", 10, "bold"))
+        lbl_name.grid(row=0, column=1, pady=10, padx=0)
+
+        txt_name = Entry(Manage_Frame, font=("times new roman", 10, "bold"), bd=5, relief=GROOVE)
+        txt_name.grid(row=0, column=2, ipadx=10, pady=10, padx=10)
+
+        lbl_phone = Label(Manage_Frame, text="ফোন ", fg="black",font=("Lohit Bengali", 10, "bold"))
+        lbl_phone.grid(row=1, column=1, pady=10, padx=0)
+
+        txt_phone = Entry(Manage_Frame, font=("times new roman", 10, "bold"), bd=5, relief=GROOVE)
+        txt_phone.grid(row=1, column=2, ipadx=10, pady=10, padx=10)
+
+        lbl_order = Label(Manage_Frame, text="অর্ডার নম্বর",fg="black", font=("Lohit Bengali", 10, "bold"))
+        lbl_order.grid(row=2, column=1, pady=10, padx=0)
+
+        txt_order = Entry(Manage_Frame, font=("times new roman", 10, "bold"), bd=5, relief=GROOVE)
+        txt_order.grid(row=2, column=2, ipadx=10, pady=10, padx=10)
+
+
+# ++++++++++++++++++++++++++++++++++++++++pant size++++++++++++++++++++++++++++
+
+        m_pant = Label(Manage_Frame, text="প্যান্ট", bg="cyan",fg="black", font=("Lohit Bengali", 10, "bold"))
+        m_pant.grid(row=3, columnspan=1, pady=10, sticky="W")
+
+        lbl_height=Label(Manage_Frame,text="লম্বা",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_height.grid(row=4,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_height=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_height.grid(row=4,column=0,pady=10,padx=60)
+
+        lbl_waist=Label(Manage_Frame,text="কোমর",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_waist.grid(row=5,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_waist=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_waist.grid(row=5,column=0,pady=10,padx=60)
+
+        lbl_hip=Label(Manage_Frame,text="হিপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_hip.grid(row=6,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_hip=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_hip.grid(row=6,column=0,pady=10,padx=60)
+
+        lbl_heigh=Label(Manage_Frame,text="হাই",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_heigh.grid(row=7,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_heigh=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_heigh.grid(row=7,column=0,pady=10,padx=60)
+
+        lbl_thigh=Label(Manage_Frame,text="থাই",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_thigh.grid(row=8,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_thigh=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_thigh.grid(row=8,column=0,pady=10,padx=60)
+
+        lbl_mohor=Label(Manage_Frame,text="মোহরি",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_mohor.grid(row=9,column=0,pady=10,padx=0,sticky="W")
+
+        lbl_mohor=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_mohor.grid(row=9,column=0,pady=10,padx=60)
+
+#------------------pant combo button------------
+
+        lbl_kuchi=Label(Manage_Frame,text="কুচি",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_kuchi.grid(row=10,column=0,pady=10,padx=0,sticky="W")
+
+        
+        combo_pant = ttk.Combobox(Manage_Frame, font=("Lohit Bengali", 10,),width=10, state='readonly')
+        combo_pant['values'] = ("ছাড়া", "সামনে")
+        combo_pant.grid(row=10, column=0, padx=60, pady=10)
+
+
+        lbl_pocket=Label(Manage_Frame,text="পকেট ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_pocket.grid(row=11,column=0,pady=10,padx=0,sticky="W")
+
+        
+        combo_pocket = ttk.Combobox(Manage_Frame, font=("Lohit Bengali", 10,),width=10, state='readonly')
+        combo_pocket['values'] = ("১টা", "২টা","৩টা" ,"৪টা")
+        combo_pocket.grid(row=11, column=0, padx=60, pady=10)
+
+
+
+
+
+
+
+# ===================================SHIRT SECTION=========================
+
+        m_shirt = Label(Manage_Frame, text="শার্ট", bg="cyan",fg="black", font=("Lohit Bengali", 10, "bold"))
+        m_shirt.grid(row=3, column=1, padx=0,pady=10,sticky="W")
+
+
+        lbl_lomba=Label(Manage_Frame,text="লম্বা",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_lomba.grid(row=4,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_lomba=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_lomba.grid(row=4,column=1,pady=0,padx=90)
+
+        lbl_body=Label(Manage_Frame,text="বডি",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_body.grid(row=5,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_body=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_body.grid(row=5,column=1,ipady=0,padx=90)
+
+        lbl_chest=Label(Manage_Frame,text="বুকের মাপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_chest.grid(row=6,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_chest=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_chest.grid(row=6,column=1,pady=0,padx=90)
+
+        lbl_hip1=Label(Manage_Frame,text="হিপের মাপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_hip1.grid(row=7,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_hip1=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_hip1.grid(row=7,column=1,pady=0,padx=90)
+
+        lbl_shoulder=Label(Manage_Frame,text="শোল্ডার",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_shoulder.grid(row=8,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_shoulder=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_shoulder.grid(row=8,column=1,pady=0,padx=90)
+
+        lbl_hand=Label(Manage_Frame,text="হাতার মাপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_hand.grid(row=9,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_hand=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_hand.grid(row=9,column=1,pady=0,padx=90)
+
+        lbl_neck=Label(Manage_Frame,text="গলার মাপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_neck.grid(row=10,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_body=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_body.grid(row=10,column=1,pady=0,padx=90)
+
+        lbl_cup=Label(Manage_Frame,text="কাপ এর মাপ",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_cup.grid(row=11,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_cup=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_cup.grid(row=11,column=1,pady=0,padx=90)
+
+        lbl_colar=Label(Manage_Frame,text="কলার",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_colar.grid(row=12,column=1,pady=0,padx=0,sticky="W")
+
+        lbl_colar=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_colar.grid(row=12,column=1,pady=0,padx=90)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ================================Suite SECTION=========================
+
+        m_shirt = Label(Manage_Frame, text="স্যুট ", bg="cyan",fg="black", font=("Lohit Bengali", 10, "bold"))
+        m_shirt.grid(row=3, column=2,padx=50, pady=10,sticky="W")
+
+
+        lbl_height2=Label(Manage_Frame,text="লম্বা",bg="light cyan",fg="black",font=("Lohit Bengali",10,"bold"))
+        lbl_height2.grid(row=4,column=2,pady=10,padx=0,sticky="W")
+
+        lbl_height2=Entry(Manage_Frame,font=("times new roman",10,"bold"),width=10,bd=5,relief=GROOVE)
+        lbl_height2.grid(row=4,column=2,pady=10,padx=60)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ================================Punjabi SECTION=========================
+
+        m_shirt = Label(Manage_Frame, text="পাঞ্জাবী ", bg="cyan",fg="black", font=("Lohit Bengali", 10, "bold"))
+        m_shirt.grid(row=3, column=5, padx=50,pady=10)
+
+
+# ====================BUTTTON=================
+
+        btn_Frame = Frame(Manage_Frame, bd=4, relief=RIDGE, bg="light cyan")
+        btn_Frame.place(x=10, y=580, width=760)
+
+        Addbtn = Button(btn_Frame, text="যোগ করুন", fg="black", font=("Lohit Bengali", "12", "bold"), width=10).grid(row=0, column=0, padx=10)
+        updatebtn = Button(btn_Frame, text="আপডেট", fg="black", font=("Lohit Bengali", "12", "bold"), width=10).grid(row=0, column=3, padx=50)
+        clrbtn = Button(btn_Frame, text="সাফ করুন", fg="black", font=("Lohit Bengali", "12", "bold"), width=10).grid(row=0, column=5, padx=60)
+        delbtn = Button(btn_Frame, text="মুছে ফেলুন", fg="black", font=("Lohit Bengali", "12", "bold"), width=10).grid(row=0, column=7, padx=70)
+
+        # ============DETAIL FRAME============
+        Detail_Frame = Frame(self.root, bd=2, relief=RIDGE, bg="light cyan")
+        Detail_Frame.place(x=850, y=100, width=480, height=635)
+
+        lbl_search = Label(Detail_Frame, text="এখানে খোজ করুন",bg="cyan", fg="black", font=("Lohit Bengali", 10, "bold"))
+        lbl_search.grid(row=0, column=0, pady=10, padx=20, sticky="W")
+
+        combo_search = ttk.Combobox(Detail_Frame, font=("Lohit Bengali", 10,), state='readonly')
+        combo_search['values'] = ("নাম", "ফোন", "তারিখ", "অর্ডার নং")
+        combo_search.grid(row=0, column=1, ipadx=5, pady=10)
+
+        txt_search = Entry(Detail_Frame, font=("times new roman", 14, "bold"), bd=5, relief=GROOVE)
+        txt_search.grid(row=1, column=0, pady=10, padx=20, sticky="w")
+
+        searchbtn = Button(Detail_Frame, text="চাপ দিন", width=15).grid(row=1, column=1, ipadx=10, pady=10)
+
+
+# ====================TABLE FRAME=====================
+
+        Table_Frame = Frame(Detail_Frame, bd=4, relief=RIDGE, bg="light cyan")
+        Table_Frame.place(x=10, y=100, width=460, height=530)
+
+
+root = Tk()
+
+ob = Billing(root)
+root.mainloop()
